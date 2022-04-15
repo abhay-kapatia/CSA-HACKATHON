@@ -88,9 +88,9 @@ h1 {
 
 .funding-box {
     position: absolute;
-    top: 70%;
+    top: 80%;
     left: 50%;
-    width: 400px;
+    width: 65vh;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, .5);
@@ -252,4 +252,20 @@ h1 {
         bottom: 100%;
     }
 }
+
+.input-file{
+    display:none;  
+  }
+  .input-btn{
+    background-color:transparent;
+    color:#fff;
+    border:1px solid #22e3e6;
+    padding:5px;
+    border-radius:6px;
+    box-shadow:1px 1px 3px #000;
+    margin:10px;
+  }
+  .input-btn:hover{
+    background-color:transparent;
+  }
 

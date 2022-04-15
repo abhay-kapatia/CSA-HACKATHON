@@ -24,48 +24,61 @@
         <a href="#">Profile</a>
         <a href="#">Challenge</a>
         <a href="RaiseFund.html" class="active">Raise Fund</a>
-        <a href="Donate.html" >Donate</a>
+        <a href="Donate.html">Donate</a>
         <a href="#">About</a>
-        <a href="#" >Home</a>
+        <a href="#">Home</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
     <div class="head">
-        <center><h1>BE THE SUNSHINE<br>DURING DARK DAYS</h1></center>
+        <center>
+            <h1>BE THE SUNSHINE<br>DURING DARK DAYS</h1>
+        </center>
     </div>
     <div class="funding-box">
         <h2>RECIEVE SMILES</h2>
         <form>
-          <div class="user-box">
-            <input type="text" name="" required="">
-            <label>Name</label>
-          </div>
-          <div class="user-box">
-            <input type="email" name="" required="">
-            <label>Title</label>
-          </div>
-          <div class="user-box">
-            <input type="tel" name="" required="">
-            <label>Phone Number</label>
-          </div>
-          <div class="user-box">
-            <input type="textarea" name="" required="">
-            <label>message</label>
-          </div>
-          <div class="user-box">
-            <input type="number" min="0" name="" required="">
-            <label>Amount</label>
-          </div>
-          <a href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            CREATE FUNDRAISER
-          </a>
+            <div class="user-box">
+                <input type="text" name="" required="">
+                <label>Title</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="" required="">
+                <label>Name</label>
+            </div>
+            <div class="user-box">
+                <input type="email" name="" required="">
+                <label>E-Mail</label>
+            </div>
+            <div class="user-box">
+                <input type="tel" name="" required="">
+                <label>Phone Number</label>
+            </div>
+            <div class="user-box">
+                <input type="textarea" name="" required="">
+                <label>Message</label>
+            </div>
+            <div class="user-box">
+                <input type="number" min="0" name="" required="">
+                <label>Amount</label>
+            </div>
+            <div class="user-box">
+                <input type='file' class='input-file' id="input_file">
+                <button class='input-btn' id='input_btn'>Browse</button>
+                <label for="myfile">Uplod Your Id</label>
+            </div>
+            <center><a href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    CREATE FUNDRAISER
+                </a>
+            </center>
+
         </form>
-      </div>
+    </div>
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
@@ -75,6 +88,10 @@
                 x.className = "topnav";
             }
         }
+        document.getElementById("input_btn")
+            .addEventListener('click', function () {
+                document.getElementById("input_file").click();
+            }, false);
     </script>
 </body>
 
