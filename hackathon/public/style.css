@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Sail&family=Tangerine&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-.bb {
-    background-color: #000;
-}
 
 .fund {
     background-image: url("assets/bg.png");
     background-color: #cccccc;
 }
-
+#p1 {
+    font-size: 17px;
+    color: #f2f2f2;
+    float: left;
+    display: block;
+    padding: 14px 16px;
+}
 .challenge {
     background-color: black;
 }
@@ -22,7 +25,7 @@ img {
     text-align: center;
     font-size: 120px;
     color: #fff;
-    
+
     margin-top: 0px;
   }
 .counter{
@@ -30,49 +33,14 @@ img {
     width: 80%;
 }
 
-.containerf {
-    position: relative;
-}
 
-#i1 {
-    position: absolute;
-    top: 20%;
-    left: 60%;
-    
-}
 #ci1 {
     position: absolute;
     top: 20%;
-    
-    
-}
-.pp{
-    font-size: 10vh;
-    color: rgb(51, 51, 51);
-    font-family: 'Playfair Display', serif;
-}
-#pp1
-{
-    color: rgb(51, 51, 51);
-     font-size: 25px; 
-     margin: -200px 0px;
+
+
 }
 
-#i2 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 200px;
-    background: -webkit-linear-gradient(#eee, #333);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#p1 {
-    font-size: 17px;
-    color: #f2f2f2;
-    float: left;
-    display: block;
-    padding: 14px 16px;
-}
 
 #P2 {
     position: absolute;
@@ -432,44 +400,29 @@ h1 {
     }
 }
 
-
-
-
-.cards-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-  .card img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .card {
-    margin: 0 0.5em;
-    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-    border: none;
-    border-radius: 0;
-  }
-  .carousel-inner {
-    padding: 1em;
-  }
-  .carousel-control-prev,
-  .carousel-control-next {
-    background-color: #e1e1e1;
-    width: 5vh;
-    height: 5vh;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  @media (min-width: 768px) {
-    .card img {
-      height: 11em;
-    }
-  }
-
   .c1{
       padding-top: 15%;
   }
 
 
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+	text-align:center;
+}
 
+#profile{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
