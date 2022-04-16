@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="assets/angular.min.js"></script>
+    <script src="assets/jquery-1.8.2.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Fundraising</title>
+
+
+    <script>
+        var module = angular.module("client", []);
+        module.controller("cctrl", function ($scope, $http) {
+            $scope.jsonAry = [];
+
+            $scope.DoFetch = function () {
+                //alert("helyuu🐥");
+                $http.get("/client-fetch").then(yes, no)
+                function yes(response) {
+                    //alert(response.data);
+                    var temp = JSON.stringify(response.data);
+                    //console.log(JSON.parse($scope.jsonAry));
+                    $scope.jsonAry = JSON.parse(temp);
+                }
+                function no(response) {
+                    alert(response.data);
+                }
+            }
+        })
+    </script>
+</head>
+
+<body class="bb" ng-app="client" ng-controller="cctrl" ng-init="DoFetch()">
+    <div class="topnav" id="myTopnav">
+        <img class="logo" src="assets/logo'.png" alt="" srcset="" style="width: 50px; height: 50px;">
+        <h2 id="p1">SocialEyes</h2>
+        <a href="http://" target="_blank" rel="noopener noreferrer"></a>
+        <a href="Profile.html">Login</a>
+        <a href="Challenge.html">Challenge</a>
+        <a href="RaiseFund.html">Raise Fund</a>
+        <a href="Donate.html">Donate</a>
+        <a href="#">Blog</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="containerf">
+        <img src="assets/bgi.jpg" alt="" srcset="">
+        <div id="i1">
+            <p class="pp">Support a cause <br>you care about <br><span
+                    style="color: rgb(51, 51, 51); font-size: 25px; margin: -200px 0px;">"The thing you take for
+                    granted, someone else praying for"</span></p>
+        </div>
+    </div>
+    <div>
+        <center>
+            <p id="i2">About Us</p>
+            <div class="container">
+                <p style="color: white; font-size: 20px;">
+                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                    Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
+                    in their
+                    exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                    Where can I get some?There are many variations of passages of Lorem Ipsum available, but the
+                    majority
+                    have suffered alteration in some form, by injected humour, or randomised words which don't look
+                    even
+                    slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there
+                    isn't
+                    anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the
+                    Internet tend
+                    to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                    It uses
+                    a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to
+                    generate
+                    Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from
+                    repetition,
+                    injected humour, or non-characteristic words etc.</p>
+                <br>
+                <br>
+            </div>
+        </center>
+    </div>
+    <br>
+    <div class="container-fluid bg-light">
+        <center>
+            <h3>Star Performers</h3>
+        </center>
+        <div class="card-group">
+            <div class="card">
+                <img class="card-img-top" src="assets/profile.jpg" alt="Card image" style="height: 500px;">
+                <div class="card-body">
+                    <center>
+                        <h5 class="card-title">Star Performer</h5>
+                        <p class="card-text">NAME: John Miles</p>
+                        <p class="card-text">EMAIL: example@gmail.com</p>
+                        <p class="card-text">Phone No. 99999-88888</p>
+                        <p class="card-text"><small class="text-muted">Credits : 6000</small></p>
+                    </center>
+
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="assets/profile.jpg" alt="Card image" style="height: 500px;">
+                <div class="card-body">
+                    <center>
+                        <h5 class="card-title">Star Performer</h5>
+                        <p class="card-text">NAME: John Miles</p>
+                        <p class="card-text">EMAIL: example@gmail.com</p>
+                        <p class="card-text">Description :This card has supporting text below as a natural lead-in to
+                            additional content.</p>
+                        <p class="card-text"><small class="text-muted">Credits : 6000</small></p>
+                    </center>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+
+    <center>
+        <h1>Causes we are serving</h1>
+    </center>
+    <div ng-repeat="obj in jsonAry">
+        <div class="card">
+            <!--<img src="..." class="card-img-top" alt="...">-->
+            <div class="card-body">
+                <h5 class="card-title">{{obj.title}}</h5>
+                <p class="card-text">{{obj.message}}</p>
+                <a href="#" class="btn btn-primary">Donate Now</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+
+</html>
