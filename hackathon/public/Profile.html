@@ -19,6 +19,41 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <title>Fundraising</title>
+    
+    <script>
+        $(document).ready(function () {
+
+            $("#signup").click(function () {
+                $(location).prop("href", "http://localhost:5151")
+                //window.location.href("/index.html");
+            })
+            // $("#login").click(function () {
+            //     var eml = $("#email").val();
+            //     var pwd = $("#password").val();
+            //     var url = "http://localhost:5151/check-in-table?id=" + eml;
+            //     $.post(url, function (JSONAry) {
+            //         //alert(JSON.stringify(JSONAry));
+            //         if (JSONAry.length == 0)
+
+            //             alert("Sign up First!");
+            //         //$("#result").html("Sign Up first");
+
+            //         else if (pwd == JSONAry[0].pwd) {
+            //             document.signin.submit();
+            //            alert("login successfully");
+            //         }
+            //         else
+            //             alert("incorrect password :( ");
+            //         // $("#result").html("");
+            //     })
+            // })
+        })
+    </script>
+
+
+
+
+
 </head>
 
 <body class="fund">
@@ -30,7 +65,7 @@
         <a href="Challenge.html">Challenge</a>
         <a href="RaiseFund.html">Raise Fund</a>
         <a href="Donate.html">Donate</a>
-        <a href="#">Blog</a>
+        <a href="Blog.html">Blog</a>
         <a href="index.html">Home</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
@@ -55,8 +90,8 @@
 
                     <div class="md-form mb-4">
                         <i class="fas fa-lock prefix grey-text"></i>
-                        <input type="password" id="defaultForm-pass" class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                        <input type="number" min="1" id="defaultForm-pass" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="defaultForm-pass">Minimum Amount</label>
                     </div>
 
                 </div>
@@ -69,31 +104,28 @@
 
 
     <!--s-->
-    <CENter><h1 class="hh1" style="font-size:100px">SIGN UP & LOG IN <br>PAGE</h1></CENter>
-    
+    <CENter>
+        <h1 class="hh1" style="font-size:100px">SIGN UP & LOG IN <br>PAGE</h1>
+    </CENter>
+
 
     <div class="row" style="padding-top: 50px;">
         <div class="col-md-6">
             <div class="signup1">
-                <form action="/action_page.php" style="border:1px solid #ccc">
+                <form method="POST" enctype="multipart/form-data" style="border:1px solid #ccc">
                     <div class="container">
                         <h1>Sign Up</h1>
                         <p>Please fill in this form to create an account.</p>
                         <hr>
 
                         <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder="Enter Email" name="email" required>
+                        <input type="email" placeholder="Enter Email" value="pankaj@test.com" name="email" required>
 
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
+                        <input type="password" placeholder="Enter Password" value="123456" name="psw" required>
 
-                        <label for="psw-repeat"><b>Repeat Password</b></label>
-                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
-                            Remember me
-                        </label>
+                        <label for="psw-repeat"><b>Birthday</b></label>
+                        <input type="text" placeholder="Repeat Password" value="21/03/2022" name="bday" required>
 
                         <div class="text-center">
                             <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal"
@@ -104,7 +136,7 @@
 
                         <div class="clearfix">
                             <button type="button" class="cancelbtn">Cancel</button>
-                            <button type="submit" class="signupbtn">Sign Up</button>
+                            <button type="submit" formaction="signup" class="signupbtn">Sign Up</button>
                         </div>
                     </div>
                 </form>
@@ -112,19 +144,20 @@
         </div>
         <div class="col-md-6">
             <div class="signin1">
-                <form action="/action_page.php" method="post">
+                <form method="POST" action="check-in-table" enctype="multipart/form-data">
                     <div class="imgcontainer">
                         <img src="assets/logo.jpeg" alt="Avatar" class="avatar">
                     </div>
 
                     <div class="container">
-                        <label for="uname"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
-
+                        <label for="uname"><b>Email</b></label><br>
+                        <input type="email" placeholder="Enter Email" id="email" name="email" required>
+                        <br>
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
+                        <input type="password" placeholder="Enter Password"  id="password" name="psw" required>
 
-                        <button type="submit">Login</button>
+                        <button type="submit" id="login">Login</button>
+                        <label for="" id="result"></label>
 
                     </div>
 

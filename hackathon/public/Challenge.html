@@ -17,16 +17,6 @@
     <link rel="stylesheet" href="style.css">
     <title>Fundraising</title>
 
-    <script>
-        var counterVal = 0;
-        function counter() {
-            updateDisplay(++counterVal);
-        }
-
-        function updateDisplay(val) {
-            document.getElementById("counter-label").innerHTML = val;
-        }
-    </script>
 </head>
 
 <body class="challenge">
@@ -38,7 +28,7 @@
         <a href="Challenge.html" class="active">Challenge</a>
         <a href="RaiseFund.html">Raise Fund</a>
         <a href="Donate.html">Donate</a>
-        <a href="#">Blog</a>
+        <a href="Blog.html">Blog</a>
         <a href="index.html">Home</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
@@ -92,8 +82,7 @@
                                 </div>
                             </div>
                             <br><br>
-                            <button class="btn btn-primary" formaction="challenge-s" type="submit"
-                                onclick="counter()">Submit Your Challenge</button>
+                            <button class="btn btn-primary" formaction="challenge-s" type="submit">Submit Your Challenge</button>
                         </form>
 
                     </div>
