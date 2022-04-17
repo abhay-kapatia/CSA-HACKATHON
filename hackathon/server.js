@@ -109,18 +109,19 @@ app.post("/challenge-s", function (req, resp) {
         //for uploading file in server
         req.body.picname = req.files.pic.name;
         var data = path.join(path.resolve(), "public", "uploads", req.files.pic.name);
-        req.files.input_file.mv(data);
+        req.files.pic.mv(data);
     }
     //var data=[req.body.txtname,req.body.email,req.body.mbl,req.body.adr,req.body.city];
 
     var data = [req.body.email, req.body.caption, req.body.picname];
-    dbcon.query("insert into challenge values(?,?,?)", data, function (err) {
+    dbcon.query("insert into challenge values(?,?,?,0)", data, function (err) {
 
         if (err) {
             resp.send(err.message);
         }
         else {
             resp.send("Tada");
+            //counter++;
         }
     })
 

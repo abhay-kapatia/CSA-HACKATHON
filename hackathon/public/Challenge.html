@@ -16,6 +16,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Fundraising</title>
+
+    <script>
+        var counterVal = 0;
+        function counter() {
+            updateDisplay(++counterVal);
+        }
+
+        function updateDisplay(val) {
+            document.getElementById("counter-label").innerHTML = val;
+        }
+    </script>
 </head>
 
 <body class="challenge">
@@ -39,7 +50,7 @@
             <h1 class="c1">THE GREATER <br> <span style="color: aqua;">GOOD</span> <br>CHALLENGE</h1>
         </div>
     </div>
-    
+
     <div class="container">
         <center>
             <div class="counter">
@@ -81,7 +92,8 @@
                                 </div>
                             </div>
                             <br><br>
-                            <button class="btn btn-primary" formaction="challenge-s" type="submit">Submit Your Challenge</button>
+                            <button class="btn btn-primary" formaction="challenge-s" type="submit"
+                                onclick="counter()">Submit Your Challenge</button>
                         </form>
 
                     </div>
